@@ -20,3 +20,24 @@ const emp1 = new Employee("Alice Johnson", 101, "Sales", 5000); // Test Data
 
 console.log(emp1.getDetails()); 
 console.log(emp1.calculateAnnualSalary()); 
+
+// Task 2 - Created Manager Class with Inheritance
+class Manager extends Employee { //Creating Manager Class
+    constructor(name, id, department, salary, teamSize) {
+        super(name, id, department, salary); // Inheriting Employee properties
+        this.teamSize = teamSize; // Team size for manager
+    }
+
+    getDetails() {
+        return `Manager: ${this.name}, ID: ${this.id}, Department: ${this.department}, Salary: $${this.salary}, Team Size: ${this.teamSize}`;
+    }
+
+    calculateBonus() {
+        return this.calculateAnnualSalary() * 0.1; // Bonus is 10% of annual salary
+    }
+}
+
+const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5); // Test Cases
+
+console.log(mgr1.getDetails());
+console.log(mgr1.calculateBonus());
